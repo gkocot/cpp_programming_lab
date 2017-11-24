@@ -16,24 +16,6 @@ void objektnaekranie::movecursor(int x,int y)
 	
 }
 
-
-
-
-/*
-class Ekran:public objektnaekranie
-{	
-public:
-	Ekran(int _x, int _y,int _w,int _h): x(_x), y(_y),w(_w),h(_h)  {}
-	void rysuj(void);
-	
-private:
-	friend class pilka;
-	 int x;
-	 int y;	 
-	 int w;
-	 int h;
-};
-*/
 void Ekran::rysuj(void)
 {
 	
