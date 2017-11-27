@@ -77,7 +77,7 @@ void pilka::rysuj(void)
 }
 
 
-Pong::Pong(): e1(0,0,30,15) , e2(30,0,30,20) ,p1(5,5,'O',&e1)
+Pong::Pong(): e1(0,0,30,15) , e2(30,0,30,20) ,p1(5,5,'O',&e1),p2(7,10,'O',&e1),p3(35,10,'O',&e2),p4(40,5,'O',&e2)
 {
 	czysc();
 }
@@ -92,8 +92,14 @@ void Pong::dzialaj(void) {
 	e2.rysuj();	
 	while(!kbhit())
 	{
-		p1.move();
+			p1.move();
+		p2.move();
+		p3.move();
+		p4.move();
 		p1.rysuj();
+		p2.rysuj();
+		p3.rysuj();
+		p4.rysuj();
 		Sleep(200);
 	}
 

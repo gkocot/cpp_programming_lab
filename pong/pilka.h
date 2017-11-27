@@ -53,9 +53,12 @@ public:
 	Pong();
 	void dzialaj(void);
 private:
-	Ekran e1;
+		Ekran e1;
 	Ekran e2;
 	pilka p1;
+	pilka p2;
+	pilka p3;
+	pilka p4;
 
 	
 	void czysc(void);
