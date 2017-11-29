@@ -37,9 +37,6 @@ movecursor(x,y);
 		
 	}
 	
-
-	
-	
 movecursor(x,y+h-1);
 for(int i = 0 ;i < w;i++)
 	{
