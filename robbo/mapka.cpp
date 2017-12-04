@@ -38,11 +38,9 @@ void mapka::otworz(char * nazwa_pliku)
         
         int x = 0;
         int y = 0;
-        while( !plik.eof() )
-        
+		char znak;
+        while(!plik.get(znak).eof())        
         {
-        	char znak;
-            plik.get (znak);
            if (znak =='X')
            {
            	*(tablicaObiektow + x + y * LiczbaKolumn)  = new Sciana(x,y);
