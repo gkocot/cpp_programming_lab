@@ -9,5 +9,6 @@ using namespace std;
 int main(int argc, char** argv) {
 	mapka m;
 	m.otworz(argv[1]);
+	m.graj();
 	return 0;
 }

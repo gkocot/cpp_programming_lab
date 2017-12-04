@@ -10,7 +10,10 @@ public:
 void otworz(char * nazwa_pliku);
 int LiczbaWierszy;
 int LiczbaKolumn;
-	
+void graj();
+private:
+void rysuj();
+void animujgre();	
 obiekt **tablicaObiektow;
 	
 };

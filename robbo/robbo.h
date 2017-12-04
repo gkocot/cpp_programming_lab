@@ -4,9 +4,9 @@
 #include "obiekt.h"
 class robbo : public obiekt
 {
-	
-	void porusz();
-	
+	public:
+	robbo(int x,int y);
+	virtual void animujobiekt();
 	
 };
 
