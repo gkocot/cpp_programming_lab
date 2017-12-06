@@ -37,3 +37,11 @@ void obiekt::move(int x, int y) {
 	);
 }
 
+
+char obiekt::typobiektu()
+{
+	
+	return Textura;	
+}
+
+

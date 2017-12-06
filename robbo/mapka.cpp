@@ -12,6 +12,19 @@
 #include <iostream>
 using namespace std;
 
+char mapka::jaki_obiekt_stoi_na_pozycji(int x, int y)
+{
+	if ((*(tablicaObiektow + x + y * LiczbaKolumn)) == 0)
+	{
+	return ' ';
+	}
+	else	
+	{	
+	return (*(tablicaObiektow + x + y * LiczbaKolumn))->typobiektu();
+	}
+}
+
+
 void mapka::otworz(char * nazwa_pliku)
 {
 	string Linia;
@@ -48,7 +61,7 @@ void mapka::otworz(char * nazwa_pliku)
            }
             if (znak =='R')
            {
-           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new robbo(x,y);
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new robbo(x,y,this);
            	
            }           
            

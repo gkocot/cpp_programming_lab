@@ -9,6 +9,7 @@ public:
 	void rysuj();
 	virtual void animujobiekt() {}
 	void czysc();
+	char typobiektu();
 protected:
 	
 	int x;
