@@ -8,6 +8,7 @@ public:
 	obiekt(int x,int y,char Textura);
 	void rysuj();
 	virtual void animujobiekt() {}
+	void czysc();
 protected:
 	
 	int x;

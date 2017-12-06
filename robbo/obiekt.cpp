@@ -10,6 +10,15 @@ obiekt::obiekt(int x,int y,char Textura)
 	this->Textura = Textura;
 }
 
+void obiekt::czysc()
+{
+	move(x,y);
+	cout << ' ';
+	
+	
+}
+
+
 void obiekt::rysuj()
 {
 	move(x,y);

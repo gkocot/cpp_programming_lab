@@ -7,6 +7,8 @@ class robbo : public obiekt
 	public:
 	robbo(int x,int y);
 	virtual void animujobiekt();
+	private:
+	unsigned czas;
 	
 };
 
