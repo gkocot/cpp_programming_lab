@@ -56,24 +56,26 @@ void mapka::otworz(char * nazwa_pliku)
         {
            if (znak =='X')
            {
-           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new Sciana(x,y);
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new Sciana(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
            	// tworzenie obiektu robbo w tablicy dynamicznej 
            }
             if (znak =='R')
            {
-           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new robbo(x,y,this);
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new robbo(x,y /*+ tablica_wynikow.wysokosc_tablicy*/ ,this);
            	
            }           
            
             if (znak =='H')
            {
-           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new wyjscie(x,y);
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new wyjscie(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
            	
            }
             if (znak =='T')
            {
-           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new znajdzka(x,y);
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new znajdzka(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
+           		srubki++;
            }
+     
         
 		    if (znak == '\n' )
            {
@@ -100,10 +102,10 @@ void mapka::rysuj()
 		tablicaObiektow[i]->rysuj();
 	}
 		
+
+		
 		
 	}
-	
-	
 	
 }
 void mapka::animujgre()
@@ -111,13 +113,17 @@ void mapka::animujgre()
 	
 	for (int i=0;i<LiczbaKolumn * LiczbaWierszy;i++)
 	{
-		if (tablicaObiektow[i] != 0) {
+		if (tablicaObiektow[i] != 0)
+	 {
 		tablicaObiektow[i]->animujobiekt();
 	}
 		
 		
+		
 	}
 	
+	tablica_wynikow.srubki = srubki;
+	tablica_wynikow.rysuj();
 	
 	
 }
@@ -134,9 +140,9 @@ void mapka::graj()
     SetConsoleCursorInfo(consoleHandle, &info);
     
 rysuj();
-	while (
-	//	!completed &&
-		0 == (GetKeyState(VK_ESCAPE) & 0x8000) //najstarszy bit informuje ze klawisz nacisniety najlmodszy ze klaWISZ JEst w stanie przelaczonym
+	while (wygrana == false// ||
+	
+	//	0 == (GetKeyState(VK_ESCAPE) & 0x8000) //najstarszy bit informuje ze klawisz nacisniety najlmodszy ze klaWISZ JEst w stanie przelaczonym
 	) {
 		
 		animujgre();
@@ -144,7 +150,14 @@ rysuj();
 	}
 }	
 		
-		
+void mapka::kasuj_obiekt(int x,int y)
+{
+	delete *(tablicaObiektow + x + y * LiczbaKolumn); //kasowanie obiektu w tablicy obiektow
+	*(tablicaObiektow + x + y * LiczbaKolumn) = 0;
+	
+	
+	
+}
 	
 	
 	

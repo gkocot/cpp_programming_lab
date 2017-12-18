@@ -6,7 +6,7 @@ class obiekt
 
 public:
 	obiekt(int x,int y,char Textura);
-	void rysuj();
+	virtual void rysuj();
 	virtual void animujobiekt() {}
 	void czysc();
 	char typobiektu();
@@ -15,7 +15,6 @@ protected:
 	int x;
 	int y;
 	char Textura;	
-private:
 	void move(int x,int y);
 };
 
