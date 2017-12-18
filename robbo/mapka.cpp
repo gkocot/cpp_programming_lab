@@ -70,6 +70,12 @@ void mapka::otworz(char * nazwa_pliku)
            	*(tablicaObiektow + x + y * LiczbaKolumn)  = new wyjscie(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
            	
            }
+           
+            if (znak =='D')
+           {
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new duszek(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
+           	
+           }
             if (znak =='T')
            {
            	*(tablicaObiektow + x + y * LiczbaKolumn)  = new znajdzka(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
