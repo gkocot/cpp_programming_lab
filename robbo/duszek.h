@@ -1,9 +1,9 @@
+#include "obiekt.h"
 
-
-class duszek:: public obiekt
+class duszek: public obiekt
 {
-	duszek(int x,int y,int szybkosc);
+	public:
+	duszek(int x,int y);
 	
 	
-	
-}
+};

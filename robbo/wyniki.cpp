@@ -15,7 +15,7 @@ void wyniki::rysuj()
 {
 	
 	move(x,y);
-	cout << "Ilosc srubek : "<<srubki<<"ilosc kluczy : "<<klucze<<"ilosc zyc : "<<zycia;
+	cout << "Ilosc srubek : "<<srubki<<" "<<"ilosc kluczy : "<<klucze<<" "<<"ilosc zyc : "<<zycia;
 	
 	
 	

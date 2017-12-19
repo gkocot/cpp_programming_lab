@@ -1,9 +1,7 @@
-
-
-
-duszek::duszek(int x,int y,int S) : obiekt(x,y,'D')
+#include "duszek.h"
+duszek::duszek(int x,int y) : obiekt(x,y,'D')
 {
-		szybkosc = S;
+	
 		
 }
 

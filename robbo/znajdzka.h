@@ -5,9 +5,7 @@
 class znajdzka : public obiekt
 {
 	public:
-znajdzka(int x,int y);
-
-	
+znajdzka(int x,int y);	
 };
 
 #endif

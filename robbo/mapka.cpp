@@ -4,6 +4,9 @@
 #include "sciana.h"
 #include "wyjscie.h"
 #include "znajdzka.h"
+#include "duszek.h"
+#include "brama.h"
+#include "klucz.h"
 #include <string>
 #include <fstream>
 #include <algorithm>
@@ -76,6 +79,16 @@ void mapka::otworz(char * nazwa_pliku)
            	*(tablicaObiektow + x + y * LiczbaKolumn)  = new duszek(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
            	
            }
+           if (znak =='B')
+           {
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new brama(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
+           	
+           }
+           if (znak =='K')
+           {
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new klucz(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
+           		klucze++;
+           }
             if (znak =='T')
            {
            	*(tablicaObiektow + x + y * LiczbaKolumn)  = new znajdzka(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
@@ -127,7 +140,7 @@ void mapka::animujgre()
 		
 		
 	}
-	
+	tablica_wynikow.klucze = klucze;
 	tablica_wynikow.srubki = srubki;
 	tablica_wynikow.rysuj();
 	

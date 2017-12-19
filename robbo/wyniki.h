@@ -8,6 +8,5 @@ int srubki;
 int klucze;
 int zycia;
 const static int wysokosc_tablicy = 1;
-virtual void rysuj();
-	
+virtual void rysuj();	
 };
