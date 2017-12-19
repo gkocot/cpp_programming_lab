@@ -167,6 +167,8 @@ rysuj();
 		animujgre();
 		
 	}
+	cout <<endl;
+	cout<<"WYGRANA!";
 }	
 		
 void mapka::kasuj_obiekt(int x,int y)
