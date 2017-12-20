@@ -17,6 +17,7 @@ int LiczbaWierszy;
 int LiczbaKolumn;
 void graj();
 char jaki_obiekt_stoi_na_pozycji(int x, int y);
+void przemiesc_obiekt(int x, int y, int x1,int y1);
 private:
 wyniki tablica_wynikow;
 void rysuj();

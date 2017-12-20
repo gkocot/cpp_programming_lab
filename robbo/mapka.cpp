@@ -76,7 +76,7 @@ void mapka::otworz(char * nazwa_pliku)
            
             if (znak =='D')
            {
-           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new duszek(x,y /*+ tablica_wynikow.wysokosc_tablicy*/);
+           	*(tablicaObiektow + x + y * LiczbaKolumn)  = new duszek(x,y,this /*+ tablica_wynikow.wysokosc_tablicy*/);
            	
            }
            if (znak =='B')
@@ -177,6 +177,17 @@ void mapka::kasuj_obiekt(int x,int y)
 	*(tablicaObiektow + x + y * LiczbaKolumn) = 0;
 	
 	
+	
+}
+
+void mapka::przemiesc_obiekt(int x, int y, int x1,int y1)
+{
+if (*(tablicaObiektow + x1 + y1 * LiczbaKolumn) == 0)
+{
+	*(tablicaObiektow + x1 + y1 * LiczbaKolumn) = *(tablicaObiektow + x + y * LiczbaKolumn);
+	*(tablicaObiektow + x + y * LiczbaKolumn) = 0;
+	
+}
 	
 }
 	
