@@ -9,6 +9,8 @@ class robbo : public obiekt
 	robbo(int x,int y, mapka* m);
 	virtual void animujobiekt();
 	void czysciana();
+	int p_x;
+	int p_y;
 	private:
 	unsigned czas;
 	mapka* m;

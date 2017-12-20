@@ -10,6 +10,7 @@ public:
 	virtual void animujobiekt() {}
 	void czysc();
 	char typobiektu();
+	void ustaw_pozycje(int _x, int _y) {x = _x; y = _y; }
 protected:
 	
 	int x;

@@ -7,10 +7,11 @@
 
 class mapka {
 public:
-	mapka() : LiczbaKolumn(0),LiczbaWierszy(0),srubki(0),klucze(0),tablica_wynikow(0,0,0,0,10),wygrana(false) {}
+	mapka() : LiczbaKolumn(0),LiczbaWierszy(0),srubki(0),klucze(0),zycia(3),tablica_wynikow(0,0,0,0,10),wygrana(false) {}
 	bool wygrana;
 int srubki;
 int klucze;
+int zycia;
 void kasuj_obiekt(int x,int y);
 void otworz(char * nazwa_pliku);
 int LiczbaWierszy;

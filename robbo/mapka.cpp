@@ -140,6 +140,7 @@ void mapka::animujgre()
 		
 		
 	}
+	tablica_wynikow.zycia = zycia;
 	tablica_wynikow.klucze = klucze;
 	tablica_wynikow.srubki = srubki;
 	tablica_wynikow.rysuj();
@@ -186,7 +187,8 @@ if (*(tablicaObiektow + x1 + y1 * LiczbaKolumn) == 0)
 {
 	*(tablicaObiektow + x1 + y1 * LiczbaKolumn) = *(tablicaObiektow + x + y * LiczbaKolumn);
 	*(tablicaObiektow + x + y * LiczbaKolumn) = 0;
-	
+	(*(tablicaObiektow + x1 + y1 * LiczbaKolumn))->ustaw_pozycje(x1, y1);
+	(*(tablicaObiektow + x1 + y1 * LiczbaKolumn))->rysuj();
 }
 	
 }

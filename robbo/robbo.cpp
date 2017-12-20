@@ -6,6 +6,8 @@ robbo::robbo(int x,int y,mapka * mapa) : obiekt(x,y,'R')
 {
  czas = GetTickCount();
  m = mapa;
+ p_x = x;
+ p_y = y;
 
 }
 
@@ -31,6 +33,20 @@ void robbo::animujobiekt() {
 					czas = teraz;
 					break;
 							
+				}
+				case 'D':
+				{
+					m->zycia--;
+					czysc();
+				m->przemiesc_obiekt(x,y,p_x,p_y);
+				x=p_x;y=p_y;
+					rysuj();
+					czas = teraz;
+					if (m->zycia == 0)
+					{
+						m->wygrana = true;
+					}
+					break;		
 				}
 				case 'T':
 				{
@@ -79,7 +95,8 @@ void robbo::animujobiekt() {
 					
 					
 					czysc();
-					x++;
+					//x++;
+					m->przemiesc_obiekt(x,y,x+1,y);
 					rysuj();
 					czas = teraz;
 					break;
@@ -154,7 +171,7 @@ void robbo::animujobiekt() {
 					
 					
 					czysc();
-					x--;
+					m->przemiesc_obiekt(x,y,x-1,y);
 					rysuj();
 					czas = teraz;
 					break;
@@ -243,7 +260,7 @@ void robbo::animujobiekt() {
 					
 					
 					czysc();
-					y--;
+					m->przemiesc_obiekt(x,y,x,y - 1);
 					rysuj();
 					czas = teraz;
 					break;
@@ -323,7 +340,7 @@ void robbo::animujobiekt() {
 					
 					
 					czysc();
-					y++;
+				m->przemiesc_obiekt(x,y,x,y + 1);
 					rysuj();
 					czas = teraz;
 					break;

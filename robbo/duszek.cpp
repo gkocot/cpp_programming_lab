@@ -38,9 +38,9 @@ void duszek::animujobiekt() {
 	DWORD teraz;
 	teraz = GetTickCount();
 	
-	if (teraz - czas > 150)
+	if (teraz - czas > 500)
 	{
-		if (true)
+		
 		{
 			switch(m->jaki_obiekt_stoi_na_pozycji(x + predkosc_x,y))
 		{
@@ -53,12 +53,34 @@ void duszek::animujobiekt() {
 						
 					break;
 				}
+#if 1				
+				case 'R':
+				{
+					
+				m->zycia--;				
+				m->przemiesc_obiekt(x + predkosc_x,y,2,2);
+					if (m->zycia == 0)
+					{
+						m->wygrana = true;
+					}
+				
+				
+				
+			/*	
+				czysc();
+				m->przemiesc_obiekt(x,y,x + predkosc_x,y);
+					//x = x + predkosc_x;
+					rysuj();
+					czas = teraz;
+*/
+				}
+#endif				
 				case ' ':
 				{	
 				
 					czysc();
 					m->przemiesc_obiekt(x,y,x + predkosc_x,y);
-					x = x + predkosc_x;
+					//x = x + predkosc_x;
 					rysuj();
 					czas = teraz;
 					
