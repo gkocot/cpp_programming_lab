@@ -28,7 +28,7 @@ void robbo::animujobiekt() {
 					m->kasuj_obiekt( x + 1, y);
 					m->klucze--;
 					czysc();
-					x++;
+					m->przemiesc_obiekt(x,y,x+1,y);
 					rysuj();
 					czas = teraz;
 					break;
@@ -53,7 +53,7 @@ void robbo::animujobiekt() {
 					m->kasuj_obiekt( x + 1, y);
 					m->srubki--;
 					czysc();
-					x++;
+					m->przemiesc_obiekt(x,y,x+1,y);
 					rysuj();
 					czas = teraz;
 					break;		
@@ -229,10 +229,11 @@ void robbo::animujobiekt() {
 					{
 					m->kasuj_obiekt( x, y );
 					czysc();
-					y--;
+					m->przemiesc_obiekt(x,y,x,y-1);
 					rysuj();
 					czas = teraz;
-				}
+					
+					}
 				break;
 				}
 				case 'X':
@@ -305,11 +306,12 @@ void robbo::animujobiekt() {
 				}
 				case 'B':
 				{
-					m->kasuj_obiekt( x, y );
+
 					if (m->klucze == 0)
 					{
+						m->kasuj_obiekt( x, y + 1);
 					czysc();
-					y++;
+					m->przemiesc_obiekt(x,y,x,y+1);
 					rysuj();
 					czas = teraz;
 				}
