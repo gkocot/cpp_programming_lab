@@ -35,12 +35,14 @@ m = mapa;
 void duszek::animujobiekt() {
 	// czytaj klawisz
 	// przemiesc robbo	
+
 	DWORD teraz;
 	teraz = GetTickCount();
 	
-	if (teraz - czas > 500)
+	if (teraz - czas > 400)
 	{
-		
+		int TMP = rand() % 2;
+		if (TMP == 0)
 		{
 			switch(m->jaki_obiekt_stoi_na_pozycji(x + predkosc_x,y))
 		{
@@ -88,8 +90,61 @@ void duszek::animujobiekt() {
 					
 				}
 			}
-		}	
+			
+		}else
+		{
+				switch(m->jaki_obiekt_stoi_na_pozycji(x ,y + predkosc_y))
+		{
+			
+			case 'X':
+				{
+					
+					predkosc_y = -predkosc_y;
+					
+						
+					break;
+				}
+#if 1				
+				case 'R':
+				{
+					
+				m->zycia--;				
+				m->przemiesc_obiekt(x, y+ predkosc_y,2,2);
+					if (m->zycia == 0)
+					{
+						m->wygrana = true;
+					}
+				
+				
+				
+			/*	
+				czysc();
+				m->przemiesc_obiekt(x,y,x + predkosc_x,y);
+					//x = x + predkosc_x;
+					rysuj();
+					czas = teraz;
+*/
+				}
+#endif				
+				case ' ':
+				{	
+				
+					czysc();
+					m->przemiesc_obiekt(x,y,x ,y + predkosc_y);
+					//x = x + predkosc_x;
+					rysuj();
+					czas = teraz;
+					
+					break;
+					
+				}
+			
+			}
+	
+			
+		}
 	}
+
 }
 		
 
